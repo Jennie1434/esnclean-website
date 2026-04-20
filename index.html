@@ -1307,7 +1307,9 @@
 
   <div class="contact-right">
     <div class="contact-form">
-      <form id="devis-form" novalidate>
+      <form id="devis-form" action="https://formspree.io/f/mdaydvno" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="Nouvelle demande de devis – ESNCLEAN" />
+        <input type="hidden" name="_next" value="https://esnclean-website.vercel.app/#contact" />
         <div class="form-row">
           <div class="form-group">
             <label class="form-label" for="nom">Nom</label>
@@ -1437,11 +1439,8 @@
 
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-  // Form submission – Formspree
-  const FORMSPREE_ID = 'mdaydvno';
-
-  document.getElementById('devis-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
+  // Form submission – Formspree natif
+  document.getElementById('devis-form').addEventListener('submit', function(e) {
     const form = this;
     const btn  = form.querySelector('.btn-submit');
 
@@ -1456,43 +1455,12 @@
         f.style.borderColor = '';
       }
     });
-    if (!valid) return;
 
-    // Loading state
+    if (!valid) { e.preventDefault(); return; }
+
+    // Loading state (le formulaire se soumet normalement vers Formspree)
     btn.textContent = 'Envoi en cours…';
     btn.disabled = true;
-
-    try {
-      // Envoi en JSON (plus fiable avec Formspree)
-      const json = {};
-      new FormData(form).forEach((val, key) => { json[key] = val; });
-
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-        method: 'POST',
-        body: JSON.stringify(json),
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        }
-      });
-
-      if (res.ok) {
-        form.style.display = 'none';
-        document.getElementById('form-success').classList.add('visible');
-      } else {
-        const json = await res.json();
-        throw new Error(json?.errors?.[0]?.message || 'Erreur');
-      }
-    } catch (err) {
-      btn.textContent = 'Envoyer Ma Demande';
-      btn.disabled = false;
-      btn.style.background = 'rgba(200,80,80,0.9)';
-      btn.textContent = 'Erreur – Réessayez';
-      setTimeout(() => {
-        btn.style.background = '';
-        btn.textContent = 'Envoyer Ma Demande';
-      }, 3000);
-    }
   });
 
   // Smooth scroll for anchor links
