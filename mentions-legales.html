@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mentions Légales – ESNCLEAN</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green: #1E3A2A;
+      --gold: #B8996A;
+      --cream: #F7F3EC;
+      --text: #2A2A2A;
+      --text-light: #6B6B6B;
+      --font-serif: 'Cormorant Garamond', serif;
+      --font-sans: 'Jost', sans-serif;
+    }
+    body { font-family: var(--font-sans); color: var(--text); background: var(--cream); }
+
+    /* NAVBAR */
+    .navbar {
+      background: var(--green);
+      padding: 0 4rem;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo-name { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 500; letter-spacing: 0.12em; color: white; text-decoration: none; }
+    .logo-sub  { font-size: 0.55rem; letter-spacing: 0.18em; color: var(--gold); text-transform: uppercase; display: block; }
+    .btn-back  {
+      background: transparent; border: 1px solid rgba(255,255,255,0.3);
+      color: white; padding: 0.5rem 1.2rem; font-family: var(--font-sans);
+      font-size: 0.78rem; letter-spacing: 0.06em; cursor: pointer;
+      text-decoration: none; border-radius: 2px; display: flex; align-items: center; gap: 0.4rem;
+      transition: background 0.2s;
+    }
+    .btn-back:hover { background: rgba(255,255,255,0.1); }
+
+    /* CONTENT */
+    .page-header {
+      background: var(--green);
+      padding: 3rem 4rem 4rem;
+      text-align: center;
+    }
+    .page-header h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      color: white;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.5rem;
+    }
+    .page-header p { font-size: 0.8rem; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+      background: white;
+      padding: 2.5rem;
+      border-radius: 2px;
+      border-left: 3px solid var(--gold);
+    }
+    .section h2 {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--green);
+      margin-bottom: 1rem;
+      letter-spacing: 0.04em;
+    }
+    .section p, .section li {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      line-height: 1.9;
+      font-weight: 300;
+      margin-bottom: 0.6rem;
+    }
+    .section ul { padding-left: 1.2rem; }
+    .section a { color: var(--green); }
+    .section strong { color: var(--text); font-weight: 500; }
+
+    /* FOOTER */
+    footer {
+      background: var(--green);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      font-family: var(--font-sans);
+    }
+
+    @media (max-width: 600px) {
+      .navbar { padding: 0 1.5rem; }
+      .page-header { padding: 2rem 1.5rem 3rem; }
+      .section { padding: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="logo-name">
+    ESNCLEAN
+    <span class="logo-sub">Services de Nettoyage Premium</span>
+  </a>
+  <a href="index.html" class="btn-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Retour au site
+  </a>
+</nav>
+
+<div class="page-header">
+  <h1>Mentions Légales</h1>
+  <p>Dernière mise à jour : Avril 2024</p>
+</div>
+
+<main>
+
+  <div class="section">
+    <h2>1. Éditeur du site</h2>
+    <p><strong>Raison sociale :</strong> ESNCLEAN</p>
+    <p><strong>Activité :</strong> Services de nettoyage professionnel et particulier</p>
+    <p><strong>Téléphone :</strong> 07 45 41 41 53</p>
+    <p><strong>Email :</strong> marineamsellem@gmail.com</p>
+    <p><strong>Zone d'intervention :</strong> Paris & Île-de-France</p>
+  </div>
+
+  <div class="section">
+    <h2>2. Hébergement</h2>
+    <p><strong>Hébergeur :</strong> Vercel Inc.</p>
+    <p><strong>Adresse :</strong> 340 Pine Street, Suite 701, San Francisco, CA 94104, États-Unis</p>
+    <p><strong>Site :</strong> <a href="https://vercel.com" target="_blank">vercel.com</a></p>
+  </div>
+
+  <div class="section">
+    <h2>3. Propriété intellectuelle</h2>
+    <p>L'ensemble du contenu de ce site (textes, images, graphismes, logo, icônes) est la propriété exclusive d'ESNCLEAN et est protégé par les lois françaises et internationales relatives à la propriété intellectuelle.</p>
+    <p>Toute reproduction, distribution, modification ou utilisation de ces contenus, sous quelque forme que ce soit, sans autorisation expresse et préalable d'ESNCLEAN, est strictement interdite.</p>
+  </div>
+
+  <div class="section">
+    <h2>4. Limitation de responsabilité</h2>
+    <p>ESNCLEAN s'efforce d'assurer l'exactitude et la mise à jour des informations diffusées sur ce site. Toutefois, ESNCLEAN ne peut garantir l'exactitude, la précision ou l'exhaustivité des informations mises à disposition.</p>
+    <p>ESNCLEAN décline toute responsabilité pour tout dommage résultant d'une intrusion frauduleuse d'un tiers ayant entraîné une modification des informations mises à disposition sur le site.</p>
+  </div>
+
+  <div class="section" id="confidentialite">
+    <h2>5. Politique de confidentialité & RGPD</h2>
+    <p>Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, vous disposez des droits suivants concernant vos données personnelles :</p>
+    <ul>
+      <li>Droit d'accès à vos données</li>
+      <li>Droit de rectification de vos données</li>
+      <li>Droit à l'effacement de vos données</li>
+      <li>Droit à la portabilité de vos données</li>
+      <li>Droit d'opposition au traitement de vos données</li>
+    </ul>
+    <p style="margin-top:1rem;">Pour exercer ces droits, contactez-nous à : <strong>marineamsellem@gmail.com</strong></p>
+  </div>
+
+  <div class="section">
+    <h2>6. Données collectées</h2>
+    <p>Les données collectées via le formulaire de contact (nom, email, téléphone, message) sont utilisées uniquement pour répondre à vos demandes de devis. Elles sont traitées via <strong>Formspree</strong> et ne sont pas revendues à des tiers.</p>
+    <p>Ces données sont conservées le temps nécessaire à la gestion de votre demande.</p>
+  </div>
+
+  <div class="section">
+    <h2>7. Cookies</h2>
+    <p>Ce site utilise des cookies fonctionnels pour améliorer votre expérience de navigation. Aucun cookie de traçage publicitaire n'est utilisé.</p>
+    <p>Vous pouvez à tout moment modifier vos préférences en matière de cookies via le bandeau affiché lors de votre première visite.</p>
+  </div>
+
+  <div class="section">
+    <h2>8. Contact</h2>
+    <p>Pour toute question concernant ces mentions légales ou vos données personnelles :</p>
+    <p><strong>Email :</strong> marineamsellem@gmail.com</p>
+    <p><strong>Téléphone :</strong> 07 45 41 41 53</p>
+  </div>
+
+</main>
+
+<footer>
+  © 2024 ESNCLEAN – Tous droits réservés
+</footer>
+
+</body>
+</html>
