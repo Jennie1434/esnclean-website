@@ -1307,9 +1307,7 @@
 
   <div class="contact-right">
     <div class="contact-form">
-      <form id="devis-form" action="https://formspree.io/f/mdaydvno" method="POST" novalidate>
-        <input type="hidden" name="_subject" value="Nouvelle demande de devis – ESNCLEAN" />
-        <input type="hidden" name="_next" value="https://esnclean-website.vercel.app/#contact" />
+      <form action="https://formspree.io/f/mdaydvno" method="POST">
         <div class="form-row">
           <div class="form-group">
             <label class="form-label" for="nom">Nom</label>
@@ -1334,11 +1332,6 @@
         </div>
         <button type="submit" class="btn-submit">Envoyer Ma Demande</button>
       </form>
-
-      <div class="form-success" id="form-success">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        <p>Merci ! Nous vous répondrons dans les plus brefs délais.</p>
-      </div>
     </div>
   </div>
 </section>
@@ -1439,29 +1432,6 @@
 
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-  // Form submission – Formspree natif
-  document.getElementById('devis-form').addEventListener('submit', function(e) {
-    const form = this;
-    const btn  = form.querySelector('.btn-submit');
-
-    // Validation
-    const fields = form.querySelectorAll('[required]');
-    let valid = true;
-    fields.forEach(f => {
-      if (!f.value.trim()) {
-        f.style.borderColor = 'rgba(255,100,100,0.6)';
-        valid = false;
-      } else {
-        f.style.borderColor = '';
-      }
-    });
-
-    if (!valid) { e.preventDefault(); return; }
-
-    // Loading state (le formulaire se soumet normalement vers Formspree)
-    btn.textContent = 'Envoi en cours…';
-    btn.disabled = true;
-  });
 
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
