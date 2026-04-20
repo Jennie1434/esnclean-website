@@ -1437,13 +1437,17 @@
 
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-  // Form submission
-  document.getElementById('devis-form').addEventListener('submit', function(e) {
+  // Form submission – Formspree
+  const FORMSPREE_ID = 'mdaydvno';
+
+  document.getElementById('devis-form').addEventListener('submit', async function(e) {
     e.preventDefault();
     const form = this;
+    const btn  = form.querySelector('.btn-submit');
+
+    // Validation
     const fields = form.querySelectorAll('[required]');
     let valid = true;
-
     fields.forEach(f => {
       if (!f.value.trim()) {
         f.style.borderColor = 'rgba(255,100,100,0.6)';
@@ -1452,12 +1456,37 @@
         f.style.borderColor = '';
       }
     });
-
     if (!valid) return;
 
-    // Simulate submission
-    form.style.display = 'none';
-    document.getElementById('form-success').classList.add('visible');
+    // Loading state
+    btn.textContent = 'Envoi en cours…';
+    btn.disabled = true;
+
+    try {
+      const data = new FormData(form);
+      const res  = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('form-success').classList.add('visible');
+      } else {
+        const json = await res.json();
+        throw new Error(json?.errors?.[0]?.message || 'Erreur');
+      }
+    } catch (err) {
+      btn.textContent = 'Envoyer Ma Demande';
+      btn.disabled = false;
+      btn.style.background = 'rgba(200,80,80,0.9)';
+      btn.textContent = 'Erreur – Réessayez';
+      setTimeout(() => {
+        btn.style.background = '';
+        btn.textContent = 'Envoyer Ma Demande';
+      }, 3000);
+    }
   });
 
   // Smooth scroll for anchor links
