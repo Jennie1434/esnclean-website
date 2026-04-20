@@ -1307,7 +1307,7 @@
 
   <div class="contact-right">
     <div class="contact-form">
-      <form action="https://formspree.io/f/mdaydvno" method="POST">
+      <form id="devis-form">
         <div class="form-row">
           <div class="form-group">
             <label class="form-label" for="nom">Nom</label>
@@ -1332,6 +1332,11 @@
         </div>
         <button type="submit" class="btn-submit">Envoyer Ma Demande</button>
       </form>
+
+      <div class="form-success" id="form-success">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <p>Merci ! Nous vous répondrons dans les plus brefs délais.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1432,6 +1437,36 @@
 
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
+
+  // Formulaire Formspree AJAX
+  const form = document.getElementById('devis-form');
+  if (form) {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = form.querySelector('.btn-submit');
+      btn.textContent = 'Envoi en cours…';
+      btn.disabled = true;
+
+      const res = await fetch('https://formspree.io/f/mdaydvno', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('form-success').classList.add('visible');
+      } else {
+        btn.textContent = 'Erreur – Réessayez';
+        btn.style.background = 'rgba(180,60,60,0.85)';
+        btn.disabled = false;
+        setTimeout(() => {
+          btn.textContent = 'Envoyer Ma Demande';
+          btn.style.background = '';
+        }, 3000);
+      }
+    });
+  }
 
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
