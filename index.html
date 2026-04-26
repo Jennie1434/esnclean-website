@@ -256,17 +256,15 @@
     .hero-image img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
-      object-position: center bottom;
-      transform: scale(0.95);
-      transform-origin: center bottom;
+      object-fit: cover;
+      object-position: center center;
     }
     .hero-image-overlay {
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(to right, var(--cream) 0%, rgba(247,243,236,0.4) 20%, transparent 50%),
-        linear-gradient(to top, var(--cream) 0%, transparent 12%);
+        linear-gradient(to right, var(--cream) 0%, rgba(247,243,236,0.15) 30%, transparent 60%),
+        linear-gradient(to top, rgba(247,243,236,0.3) 0%, transparent 20%);
       pointer-events: none;
     }
 
@@ -1238,7 +1236,7 @@
   </div>
 
   <div class="hero-image">
-    <img src="hero-illustration.svg" alt="ESNCLEAN – Produits de nettoyage premium" />
+    <img src="https://images.unsplash.com/photo-1618221118493-9cfa1a1193f5?w=1200&q=90" alt="Intérieur luxueux et impeccable – ESNCLEAN" />
     <div class="hero-image-overlay"></div>
   </div>
 </section>
@@ -1256,7 +1254,7 @@
     <!-- Entreprises -->
     <div class="service-card fade-up">
       <div class="service-card-img">
-        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&q=80" alt="Nettoyage entreprises" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600&q=85" alt="Nettoyage entreprises" loading="lazy" />
       </div>
       <div class="service-card-body">
         <div class="service-icon">
@@ -1277,7 +1275,7 @@
     <!-- Copropriétés -->
     <div class="service-card fade-up fade-up-delay-1">
       <div class="service-card-img">
-        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=500&q=80" alt="Nettoyage copropriétés" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=85" alt="Nettoyage copropriétés" loading="lazy" />
       </div>
       <div class="service-card-body">
         <div class="service-icon">
@@ -1297,7 +1295,7 @@
     <!-- Bailleurs sociaux -->
     <div class="service-card fade-up fade-up-delay-2">
       <div class="service-card-img">
-        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=500&q=80" alt="Nettoyage bailleurs sociaux" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=85" alt="Nettoyage bailleurs sociaux" loading="lazy" />
       </div>
       <div class="service-card-body">
         <div class="service-icon">
@@ -1318,7 +1316,7 @@
     <!-- Particuliers -->
     <div class="service-card fade-up fade-up-delay-3">
       <div class="service-card-img">
-        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=500&q=80" alt="Nettoyage particuliers" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1615873968403-89e068629265?w=600&q=85" alt="Nettoyage particuliers" loading="lazy" />
       </div>
       <div class="service-card-body">
         <div class="service-icon">
@@ -1337,7 +1335,7 @@
     <!-- Airbnb -->
     <div class="service-card fade-up">
       <div class="service-card-img">
-        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=500&q=80" alt="Nettoyage Airbnb" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1631049552057-403cdb8f0658?w=600&q=85" alt="Nettoyage Airbnb" loading="lazy" />
       </div>
       <div class="service-card-body">
         <div class="service-icon">
@@ -1354,7 +1352,7 @@
     <!-- Débarras encombrants -->
     <div class="service-card fade-up fade-up-delay-1">
       <div class="service-card-img">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80" alt="Débarras encombrants" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&q=85" alt="Débarras encombrants" loading="lazy" />
       </div>
       <div class="service-card-body">
         <div class="service-icon">
@@ -1373,7 +1371,7 @@
     <!-- Avant déménagement -->
     <div class="service-card fade-up fade-up-delay-2">
       <div class="service-card-img">
-        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=500&q=80" alt="Nettoyage avant déménagement" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=85" alt="Nettoyage avant déménagement" loading="lazy" />
       </div>
       <div class="service-card-body">
         <div class="service-icon">
@@ -1395,7 +1393,7 @@
     <!-- Après déménagement -->
     <div class="service-card fade-up fade-up-delay-3">
       <div class="service-card-img">
-        <img src="https://images.unsplash.com/photo-1562663474-6cbb3eaa4d14?w=500&q=80" alt="Nettoyage après déménagement" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=85" alt="Nettoyage après déménagement" loading="lazy" />
       </div>
       <div class="service-card-body">
         <div class="service-icon">
@@ -1450,23 +1448,23 @@
   <div class="gallery-grid">
     <!-- Grande photo à gauche (tall) -->
     <div class="gallery-item tall fade-up">
-      <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=85" alt="Salle de bain immaculée" loading="lazy" />
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=90" alt="Intérieur luxueux impeccable" loading="lazy" />
     </div>
     <!-- Colonne centrale -->
     <div class="gallery-item fade-up fade-up-delay-1">
-      <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=85" alt="Chambre propre et rangée" loading="lazy" />
+      <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=900&q=90" alt="Suite hôtelière impeccable" loading="lazy" />
     </div>
     <!-- Colonne droite haute -->
     <div class="gallery-item fade-up fade-up-delay-2">
-      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=85" alt="Bureau professionnel nettoyé" loading="lazy" />
+      <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&q=90" alt="Bureau professionnel nettoyé" loading="lazy" />
     </div>
     <!-- Colonne centrale basse -->
     <div class="gallery-item fade-up fade-up-delay-1">
-      <img src="https://images.unsplash.com/photo-1556909212-d5a58badd167?w=800&q=85" alt="Cuisine étincelante" loading="lazy" />
+      <img src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=900&q=90" alt="Cuisine haut de gamme" loading="lazy" />
     </div>
     <!-- Colonne droite basse -->
     <div class="gallery-item fade-up fade-up-delay-2">
-      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=85" alt="Salon impeccable" loading="lazy" />
+      <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=900&q=90" alt="Salon luxueux impeccable" loading="lazy" />
     </div>
   </div>
 </section>
